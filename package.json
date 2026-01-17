@@ -1,0 +1,48 @@
+{
+  "name": "etop-am-system",
+  "version": "1.0.0",
+  "description": "Vendor-neutral Account Manager intelligence platform for MSPs",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node src/server.js",
+    "migrate:latest": "knex migrate:latest --knexfile src/db/knexfile.js",
+    "migrate:rollback": "knex migrate:rollback --knexfile src/db/knexfile.js",
+    "migrate:make": "knex migrate:make --knexfile src/db/knexfile.js",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "worker": "node src/worker.js"
+  },
+  "keywords": [
+    "msp",
+    "qbr",
+    "account-management",
+    "connectwise",
+    "immy-bot",
+    "m365"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@azure/identity": "^4.13.0",
+    "@microsoft/microsoft-graph-client": "^3.0.7",
+    "axios": "^1.6.5",
+    "chart.js": "^4.5.1",
+    "chartjs-node-canvas": "^5.0.0",
+    "date-fns": "^3.0.6",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "joi": "^17.11.0",
+    "knex": "^3.1.0",
+    "openai": "^4.24.1",
+    "pdfkit": "^0.14.0",
+    "pg": "^8.11.3",
+    "pg-boss": "^9.0.3",
+    "winston": "^3.11.0"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "supertest": "^6.3.3"
+  }
+}

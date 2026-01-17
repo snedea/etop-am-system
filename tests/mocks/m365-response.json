@@ -1,0 +1,41 @@
+{
+  "users": [
+    {
+      "id": "7001",
+      "userPrincipalName": "john.doe@acme.com",
+      "mail": "john.doe@acme.com",
+      "displayName": "John Doe",
+      "accountEnabled": true,
+      "signInActivity": {
+        "lastSignInDateTime": "2026-01-15T08:30:00Z"
+      }
+    }
+  ],
+  "secureScores": [
+    {
+      "id": "8001",
+      "currentScore": 72,
+      "maxScore": 100,
+      "controlScores": [
+        {
+          "controlName": "MFA",
+          "controlCategory": "Identity",
+          "score": 8,
+          "maxScore": 10,
+          "description": "Enable MFA for all users"
+        }
+      ]
+    }
+  ],
+  "defenderAlerts": [
+    {
+      "id": "9001",
+      "title": "Suspicious email activity detected",
+      "description": "Multiple failed login attempts from unusual location",
+      "severity": "Medium",
+      "status": "new",
+      "category": "Email",
+      "createdDateTime": "2026-01-14T10:00:00Z"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "computers": [
+    {
+      "id": 3001,
+      "name": "WS-ACCT-01",
+      "computerName": "WS-ACCT-01",
+      "operatingSystem": "Windows 11 Pro",
+      "type": "Workstation",
+      "status": "Healthy",
+      "lastSeen": "2026-01-15T12:00:00Z"
+    }
+  ],
+  "baselines": [
+    {
+      "id": 4001,
+      "name": "Windows Workstation Baseline",
+      "description": "Standard configuration for Windows workstations"
+    }
+  ],
+  "complianceReports": [
+    {
+      "id": 6001,
+      "computerId": 3001,
+      "computerName": "WS-ACCT-01",
+      "baselineId": 4001,
+      "baselineName": "Windows Workstation Baseline",
+      "status": "Pass",
+      "compliant": true,
+      "driftItems": [],
+      "lastChecked": "2026-01-15T06:00:00Z"
+    }
+  ]
+}

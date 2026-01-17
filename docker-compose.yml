@@ -1,0 +1,65 @@
+services:
+  postgres:
+    image: postgres:15-alpine
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: etop_am
+    ports:
+      - "5433:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  app:
+    build: .
+    ports:
+      - "3000:3000"
+    environment:
+      NODE_ENV: development
+      PORT: 3000
+      DATABASE_URL: postgresql://postgres:postgres@postgres:5432/etop_am
+      API_KEY: ${API_KEY:-development-key}
+      CW_COMPANY_ID: ${CW_COMPANY_ID}
+      CW_PUBLIC_KEY: ${CW_PUBLIC_KEY}
+      CW_PRIVATE_KEY: ${CW_PRIVATE_KEY}
+      CW_CLIENT_ID: ${CW_CLIENT_ID}
+      CW_BASE_URL: ${CW_BASE_URL}
+      IMMY_API_KEY: ${IMMY_API_KEY}
+      IMMY_BASE_URL: ${IMMY_BASE_URL}
+      M365_TENANT_ID: ${M365_TENANT_ID}
+      M365_CLIENT_ID: ${M365_CLIENT_ID}
+      M365_CLIENT_SECRET: ${M365_CLIENT_SECRET}
+      OPENAI_API_KEY: ${OPENAI_API_KEY}
+      OPENAI_MODEL: ${OPENAI_MODEL:-gpt-4}
+    depends_on:
+      postgres:
+        condition: service_healthy
+    volumes:
+      - ./outputs:/app/outputs
+      - ./logs:/app/logs
+    command: sh -c "npm run migrate:latest && node src/server.js"
+
+  worker:
+    build: .
+    environment:
+      NODE_ENV: development
+      DATABASE_URL: postgresql://postgres:postgres@postgres:5432/etop_am
+      OPENAI_API_KEY: ${OPENAI_API_KEY}
+      OPENAI_MODEL: ${OPENAI_MODEL:-gpt-4}
+    depends_on:
+      postgres:
+        condition: service_healthy
+      app:
+        condition: service_started
+    volumes:
+      - ./outputs:/app/outputs
+      - ./logs:/app/logs
+    command: node src/worker.js
+
+volumes:
+  postgres_data:

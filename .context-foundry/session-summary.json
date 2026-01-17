@@ -1,0 +1,71 @@
+{
+  "build_start": "2026-01-16T22:32:08.628106",
+  "context_metrics": {
+    "max_context_window": 200000,
+    "model": "claude-sonnet-4",
+    "by_phase": {
+      "phase_scout": {
+        "tokens_used": 3305,
+        "percentage": 1.65,
+        "zone": "smart",
+        "budget_allocated": 14000,
+        "over_budget": false,
+        "duration_seconds": 86.45,
+        "exit_code": 0,
+        "timestamp": "2026-01-16T22:32:08.628129"
+      },
+      "phase_architect": {
+        "tokens_used": 29851,
+        "percentage": 14.93,
+        "zone": "smart",
+        "budget_allocated": 14000,
+        "over_budget": true,
+        "duration_seconds": 264.71,
+        "exit_code": 0,
+        "timestamp": "2026-01-16T22:36:33.342768"
+      },
+      "phase_builder": {
+        "tokens_used": 14640,
+        "percentage": 7.32,
+        "zone": "smart",
+        "budget_allocated": 40000,
+        "over_budget": false,
+        "duration_seconds": 674.71,
+        "exit_code": 0,
+        "timestamp": "2026-01-16T22:47:48.060846"
+      },
+      "phase_architect_iteration_1": {
+        "tokens_used": 18667,
+        "percentage": 9.33,
+        "zone": "smart",
+        "budget_allocated": 14000,
+        "over_budget": true,
+        "duration_seconds": 161.01,
+        "exit_code": 0,
+        "timestamp": "2026-01-16T22:55:49.145385"
+      }
+    }
+  },
+  "phases": {
+    "phase_scout": {
+      "status": "completed",
+      "duration_seconds": 86.45,
+      "timestamp": "2026-01-16T22:32:08.628135"
+    },
+    "phase_architect": {
+      "status": "completed",
+      "duration_seconds": 264.71,
+      "timestamp": "2026-01-16T22:36:33.342777"
+    },
+    "phase_builder": {
+      "status": "completed",
+      "duration_seconds": 674.71,
+      "timestamp": "2026-01-16T22:47:48.060860"
+    },
+    "phase_architect_iteration_1": {
+      "status": "completed",
+      "duration_seconds": 161.01,
+      "timestamp": "2026-01-16T22:55:49.145397"
+    }
+  }
+}

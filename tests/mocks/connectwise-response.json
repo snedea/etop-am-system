@@ -1,0 +1,47 @@
+{
+  "companies": [
+    {
+      "id": 1001,
+      "identifier": "ACME",
+      "name": "Acme Corporation",
+      "addressLine1": "123 Main St",
+      "city": "New York",
+      "state": "NY",
+      "zip": "10001",
+      "deletedFlag": false
+    }
+  ],
+  "agreements": [
+    {
+      "id": 5001,
+      "name": "Managed Services Agreement",
+      "billAmount": 5000.00,
+      "startDate": "2024-01-01",
+      "endDate": "2025-12-31",
+      "cancelledFlag": false
+    }
+  ],
+  "tickets": [
+    {
+      "id": 10001,
+      "summary": "Email not working",
+      "type": { "name": "Service Request" },
+      "priority": { "name": "Medium" },
+      "status": { "name": "Closed" },
+      "dateEntered": "2025-12-01T09:00:00Z",
+      "closedDate": "2025-12-01T14:30:00Z",
+      "actualHours": 1.5,
+      "respondedSkippedMinutes": 0,
+      "resolveSlaMinutes": 180
+    }
+  ],
+  "configurations": [
+    {
+      "id": 2001,
+      "name": "WS-ACCT-01",
+      "type": { "name": "Workstation" },
+      "osInfo": "Windows 11 Pro",
+      "lastUpdate": "2026-01-15T12:00:00Z"
+    }
+  ]
+}
