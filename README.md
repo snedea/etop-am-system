@@ -2,6 +2,14 @@
 
 A vendor-neutral Account Manager intelligence platform for MSPs that automates quarterly business reviews (QBRs), lifecycle planning, security posture reporting, and outcome planning.
 
+## Screenshots
+
+### Dashboard Overview
+![Dashboard Full View](screenshots/dashboard-full.png)
+
+### Dashboard Hero Section
+![Dashboard Hero](screenshots/dashboard-hero.png)
+
 ## Features
 
 - **Multi-Vendor Data Integration**: Pulls data from ConnectWise Manage, Immy.Bot, and Microsoft 365

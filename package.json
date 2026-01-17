@@ -43,6 +43,7 @@
   },
   "devDependencies": {
     "jest": "^29.7.0",
+    "puppeteer": "^24.35.0",
     "supertest": "^6.3.3"
   }
 }
